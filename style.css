@@ -1,0 +1,61 @@
+:root {
+  --color-pink: #F3D0D7;
+  --color-pink-light: #FFEFEF;
+  --color-pink-dark: #c96c91; 
+  --textbox-color: #491848a6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-pink-dark);
+}
+
+main {
+  height: 720px;
+  width: 1280px;
+  z-index: 1;
+  background-color: var(--color-pink-light);
+  background-image: url(squish-img/bg.png);
+  background-size: cover;
+  position: relative;
+  div {
+    border: 1px solid red;
+  }
+}
+
+.textbox {
+  position: absolute;
+  bottom: 10px;
+  left: 90px;
+  width: 1100px;
+  height: 160px;
+  z-index: 3;
+  background-color: var(--textbox-color);
+}
+
+.character-container {
+  height: 600px;
+  width: 500px;
+  position: absolute;
+  bottom: 0;
+  left: 400px;
+  overflow: hidden;
+  z-index: 2;
+  transition: 0.1s;
+  img {
+    width: 500px;
+  }
+  &:hover {
+    height: 610px;
+  }
+}
