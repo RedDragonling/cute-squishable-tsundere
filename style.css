@@ -2,8 +2,15 @@
   --color-pink: #F3D0D7;
   --color-pink-light: #FFEFEF;
   --color-pink-dark: #c96c91; 
-  --textbox-color: #491848a6;
+  --textbox-color: #491848d0;
+  --textbox-font-normal: #FFEFEF;
+  --textbox-font-special: #FFEFEF;
+  --textbox-font-angry: #FFEFEF;
+  --choice-bg: #c96c91;
+  --choice-hover: #F3D0D7;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   margin: 0;
@@ -18,6 +25,10 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--color-pink-dark);
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
 main {
@@ -29,7 +40,7 @@ main {
   background-size: cover;
   position: relative;
   div {
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
 }
 
@@ -41,6 +52,42 @@ main {
   height: 160px;
   z-index: 3;
   background-color: var(--textbox-color);
+  font-size: 1.5rem;
+  padding: 1em;
+  color: var(--textbox-font-normal);
+  display: flex;
+  overflow: hidden;
+  .continue-button {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+  }
+  img {
+    height: 50px;
+  }
+}
+
+
+.textbox-choice-options {
+  position: absolute;
+  Width: 260px;
+  right: 90px;
+  bottom: 200px;
+  z-index: 4;
+  font-size: 1.3rem;
+  background-color: var(--textbox-color);
+  color: var(--textbox-font-normal);
+  p {
+    margin: 2px;
+    background-color: var(--choice-bg);
+    transition: 0.2s;
+    padding: 2px;
+    &:hover {
+      background-color: var(--choice-hover);
+      padding-left: 1em;
+    }
+  }
 }
 
 .character-container {
@@ -58,4 +105,8 @@ main {
   &:hover {
     height: 610px;
   }
+}
+
+.hidden {
+  display: none;
 }
